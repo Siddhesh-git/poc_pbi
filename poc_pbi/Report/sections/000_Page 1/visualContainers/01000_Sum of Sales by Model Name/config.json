@@ -1,0 +1,106 @@
+{
+  "name": "3afe3e738bc55a652812",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 150.63509575942743,
+        "y": 280.41302441370334,
+        "z": 1000,
+        "width": 980.28685394211993,
+        "height": 424.09573113808028,
+        "tabOrder": 1000
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "clusteredColumnChart",
+    "projections": {
+      "Y": [
+        {
+          "queryRef": "DimCurrency.TotalSales"
+        }
+      ],
+      "Category": [
+        {
+          "queryRef": "DimProduct.ModelName",
+          "active": true
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "d",
+          "Entity": "DimCurrency",
+          "Schema": "extension",
+          "Type": 0
+        },
+        {
+          "Name": "d1",
+          "Entity": "DimProduct",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "d"
+              }
+            },
+            "Property": "TotalSales"
+          },
+          "Name": "DimCurrency.TotalSales",
+          "NativeReferenceName": "TotalSales"
+        },
+        {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "d1"
+              }
+            },
+            "Property": "ModelName"
+          },
+          "Name": "DimProduct.ModelName",
+          "NativeReferenceName": "ModelName"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "d"
+                }
+              },
+              "Property": "TotalSales"
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true,
+    "vcObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sum of Sales by Model Name'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

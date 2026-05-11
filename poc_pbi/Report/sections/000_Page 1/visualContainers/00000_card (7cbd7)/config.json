@@ -43,7 +43,7 @@
             "Property": "TotalSales"
           },
           "Name": "DimCurrency.TotalSales",
-          "NativeReferenceName": "Sales Amount"
+          "NativeReferenceName": "Sum of Sales Amount"
         }
       ],
       "OrderBy": [
@@ -64,7 +64,7 @@
     },
     "columnProperties": {
       "DimCurrency.TotalSales": {
-        "displayName": "Sales Amount"
+        "displayName": "Sum of Sales Amount"
       }
     },
     "drillFilterOtherVisuals": true,

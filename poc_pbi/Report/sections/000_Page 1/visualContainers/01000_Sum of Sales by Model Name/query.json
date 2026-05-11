@@ -10,6 +10,11 @@
               "Entity": "DimCurrency",
               "Schema": "extension",
               "Type": 0
+            },
+            {
+              "Name": "d1",
+              "Entity": "DimProduct",
+              "Type": 0
             }
           ],
           "Select": [
@@ -23,7 +28,34 @@
                 "Property": "TotalSales"
               },
               "Name": "DimCurrency.TotalSales",
-              "NativeReferenceName": "Sum of Sales Amount"
+              "NativeReferenceName": "TotalSales"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "d1"
+                  }
+                },
+                "Property": "ModelName"
+              },
+              "Name": "DimProduct.ModelName",
+              "NativeReferenceName": "ModelName"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "d"
+                    }
+                  },
+                  "Property": "TotalSales"
+                }
+              }
             }
           ]
         },
@@ -32,15 +64,18 @@
             "Groupings": [
               {
                 "Projections": [
-                  0
+                  0,
+                  1
                 ]
               }
             ]
           },
           "DataReduction": {
-            "DataVolume": 3,
+            "DataVolume": 4,
             "Primary": {
-              "Top": {}
+              "Window": {
+                "Count": 1000
+              }
             }
           },
           "Version": 1

@@ -7,7 +7,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Sales Amount",
+        "Restatement": "Sum of Sales Amount",
         "Name": "DimCurrency.TotalSales",
         "Type": 1,
         "Format": "G"
@@ -43,7 +43,7 @@
   ],
   "selects": [
     {
-      "displayName": "Sales Amount",
+      "displayName": "Sum of Sales Amount",
       "format": "G",
       "queryName": "DimCurrency.TotalSales",
       "roles": {
