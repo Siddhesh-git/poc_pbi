@@ -1,0 +1,73 @@
+{
+  "name": "7cbd768cfecbd2304094",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 430.86945488938619,
+        "y": 39.685344529285572,
+        "z": 0,
+        "width": 523.46859212438585,
+        "height": 224.88361899928489,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "card",
+    "projections": {
+      "Values": [
+        {
+          "queryRef": "DimCurrency.TotalSales"
+        }
+      ]
+    },
+    "prototypeQuery": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "d",
+          "Entity": "DimCurrency",
+          "Schema": "extension",
+          "Type": 0
+        }
+      ],
+      "Select": [
+        {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Source": "d"
+              }
+            },
+            "Property": "TotalSales"
+          },
+          "Name": "DimCurrency.TotalSales",
+          "NativeReferenceName": "Sales Amount"
+        }
+      ],
+      "OrderBy": [
+        {
+          "Direction": 2,
+          "Expression": {
+            "Measure": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "d"
+                }
+              },
+              "Property": "TotalSales"
+            }
+          }
+        }
+      ]
+    },
+    "columnProperties": {
+      "DimCurrency.TotalSales": {
+        "displayName": "Sales Amount"
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "hasDefaultSort": true
+  }
+}

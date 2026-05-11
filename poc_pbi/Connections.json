@@ -1,0 +1,10 @@
+{
+  "Version": 1,
+  "Connections": [
+    {
+      "Name": "EntityDataSource",
+      "ConnectionString": "Data Source=DIL-HYD-O1TB5JH;Initial Catalog=ssas_git;Cube=Model",
+      "ConnectionType": "analysisServicesDatabaseLive"
+    }
+  ]
+}

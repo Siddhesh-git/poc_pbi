@@ -1,0 +1,69 @@
+{
+  "projectionOrdering": {
+    "Values": [
+      0
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Sales Amount",
+        "Name": "DimCurrency.TotalSales",
+        "Type": 1,
+        "Format": "G"
+      }
+    ],
+    "Filters": [
+      {
+        "type": 2,
+        "expression": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Schema": "extension",
+                "Entity": "DimCurrency"
+              }
+            },
+            "Property": "TotalSales"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Values",
+          "Projection": 0,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Sales Amount",
+      "format": "G",
+      "queryName": "DimCurrency.TotalSales",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Measure": {
+          "Expression": {
+            "SourceRef": {
+              "Schema": "extension",
+              "Entity": "DimCurrency"
+            }
+          },
+          "Property": "TotalSales"
+        }
+      }
+    }
+  ]
+}
